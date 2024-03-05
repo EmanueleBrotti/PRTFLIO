@@ -1,6 +1,5 @@
 //import { useState } from "react";
 import "./css/App.css";
-import Blob1 from "./components/Blob1";
 //import {motion, useInView, useAnimation} from "framer-motion";
 
 function App() {
@@ -27,9 +26,6 @@ function App() {
           UI / UX / DEV /// JACK OF ALL TRADES.
         </h2>
       </div>
-      <div className="overflow-hidden h-20">
-        <Blob1 upsideDown={false}/>
-      </div>
       
       <div className="w-100 h-300 flex flex-col p-4 bg-light text-dark">
         <h2 className="text-2xl xsm:text-4xl sm:text-5xl md:text-6xl text-wrap xsm:text-nowrap title font-bold mt-5">
@@ -37,7 +33,7 @@ function App() {
             HERE'S MY PORTFOLIO.
         </h2>
       </div>
-
+      
       
     </>
   );
