@@ -1,20 +1,21 @@
-import { useState } from "react";
+//import { useState } from "react";
 import "./css/App.css";
+import Blob1 from "./components/Blob1";
+//import {motion, useInView, useAnimation} from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <nav className="text-light bg-dark flex w-full flex-row justify-end xsm:justify-between items-center fixed border-b border-light p-2">
+      <nav className="text-light bg-dark flex w-screen flex-row justify-end xsm:justify-between items-center fixed border-b border-light p-2 z-10">
         <p className="hidden xsm:block text-nowrap text-sm">EMANUELE BROTTI, 2024 ©</p>
         <div className="flex flex-row gap-2">
-          <button className="Dbuttons">PORTFOLIO</button>
-          <button className="Dbuttons">ABOUT</button>
-          <button className="Dbuttons">CONTACT ME</button>
+          <button className="Dbuttons text-sm xsm:text-base">PORTFOLIO</button>
+          <button className="Dbuttons text-sm xsm:text-base">ABOUT</button>
+          <button className="Dbuttons text-sm xsm:text-base">CONTACT ME</button>
         </div>
       </nav>
-      <div className="w-100 flex flex-col justify-center h-screen p-4">
+      <div className="w-100 flex flex-col h-screen p-4">
         <h1 className="text-4xl xsm:text-5xl sm:text-6xl md:text-8xl text-nowrap title">
           <br></br>
           HI, I'M EMA. <br></br>
@@ -26,6 +27,18 @@ function App() {
           UI / UX / DEV /// JACK OF ALL TRADES.
         </h2>
       </div>
+      <div className="overflow-hidden h-20">
+        <Blob1 upsideDown={false}/>
+      </div>
+      
+      <div className="w-100 h-300 flex flex-col p-4 bg-light text-dark">
+        <h2 className="text-2xl xsm:text-4xl sm:text-5xl md:text-6xl text-wrap xsm:text-nowrap title font-bold mt-5">
+            DON'T WASTE YOUR TIME, <br></br>
+            HERE'S MY PORTFOLIO.
+        </h2>
+      </div>
+
+      
     </>
   );
 }

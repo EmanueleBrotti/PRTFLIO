@@ -10,9 +10,20 @@
     border-radius: 0.6em;
     text-decoration: none;
     padding: 0.3em 0.5em;
+    text-wrap: nowrap;
 }
 
 .Dbuttons:hover {
     color: var(--dark);
     background-color: var(--light);
+}
+
+#blob {
+    background-color: var(--light);
+    width: 100vw;
+}
+
+.blobBox {
+    overflow: hidden;
+    height: 100px;
 }
