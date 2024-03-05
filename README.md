@@ -1,2 +1,3 @@
 # Ema-s-Portfolio
-a personal portfolio made with react, typescript and tailwind
+a personal portfolio made with react, typescript and tailwind.
+Public only for learning purposes!
