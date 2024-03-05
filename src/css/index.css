@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Familjen Grotesk", sans-serif;
+  --light: #e0e0e0;
+  --dark: #0e0e0e;
+  --green: #96AA8A;
+}
+
+body {
+  margin: 0%;
+  background-color: var(--dark);
+  color: var(--light);
+  overflow-x: hidden;
+}

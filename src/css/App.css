@@ -1,0 +1,18 @@
+#title {
+    transition: all 0.5s;
+}
+
+.Dbuttons {
+    transition: color 0.4s ease-out, background-color 0.4s ease-out;
+    color: var(--light);
+    background-color: var(--dark);
+    border: var(--light) solid 1px;
+    border-radius: 1em;
+    text-decoration: none;
+    padding: 0.3em;
+}
+
+.Dbuttons:hover {
+    color: var(--dark);
+    background-color: var(--light);
+}
