@@ -12,10 +12,20 @@ function App() {
     <>
       
       <Nav/>
-      <Intro/>
+
+      <main>
+        <section id="intro">
+          <Intro/>
+        </section>
       
-      <Projects/>
-      <About/>
+        <section id="projects">
+          <Projects/>
+        </section>
+      
+        <section id="about">
+          <About/>
+        </section>
+      </main>
       
       
     </>

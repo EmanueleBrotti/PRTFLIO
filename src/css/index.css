@@ -11,6 +11,8 @@
   --light: #e0e0e0;
   --dark: #0e0e0e;
   --green: #96AA8A;
+  scroll-padding-top: var(--navHeight, 10px); /* updated in js*/
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +20,8 @@ body {
   background-color: var(--dark);
   color: var(--light);
   overflow-x: hidden;
-
+  
+  
 }
 
 ::-moz-selection { /* Code for Firefox */

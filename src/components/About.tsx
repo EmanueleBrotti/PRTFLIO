@@ -3,20 +3,20 @@ import SkillBlock from "./SkillBlock";
 import { useState } from "react";
 
 const skills = [
-    {name: "HTML5", icon: "html5-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/responsive-web-design"},
-    {name: "CSS3", icon: "css3-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/responsive-web-design"},
+    {name: "HTML5", icon: "html5-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/responsive-web-design", job:"WEB DEV"},
+    {name: "CSS3", icon: "css3-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/responsive-web-design", job:"WEB DEV"},
     
-    {name: "TAILWINDCSS", icon: "tailwindcss-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries"},
-    {name: "BOOTSTRAP", icon: "bootstrap-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries"},
-    {name: "JAVASCRIPT", icon: "javascript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/javascript-algorithms-and-data-structures-v8"},
-    {name: "TYPESCRIPT", icon: "typescript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries"},
-    {name: "REACT", icon: "react-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries"},
-    {name: "REDUX TOOLKIT", icon: "redux-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries"},
+    {name: "TAILWINDCSS", icon: "tailwindcss-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DESIGNER"},
+    {name: "BOOTSTRAP", icon: "bootstrap-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DESIGNER"},
+    {name: "JAVASCRIPT", icon: "javascript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/javascript-algorithms-and-data-structures-v8", job:"DEV"},
+    {name: "TYPESCRIPT", icon: "typescript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
+    {name: "REACT", icon: "react-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
+    {name: "REDUX TOOLKIT", icon: "redux-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
     
     
-    {name: "C#", icon: "csharp-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft"},
-    {name: "GITHUB", icon: "github-original", link:"https://github.com/EmanueleBrotti"},
-    {name: "VSCODE", icon: "vscode-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft"}
+    {name: "C#", icon: "csharp-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft", job:"DEV"},
+    {name: "GITHUB", icon: "github-original", link:"https://github.com/EmanueleBrotti", job:"USER"},
+    {name: "VSCODE", icon: "vscode-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft", job:"USER"},
     // {name: "python", link:""}, so usarlo ma non ho certificazione
     //poi fai git php e rust
 ]
@@ -25,7 +25,7 @@ const skills = [
 
 export default function About() {
 
-    const [label, setLabel] = useState(""); //updates with the hovered skill
+    const [label, setLabel] = useState("SWISS ARMY KNIFE:"); //updates with the hovered skill
 
     function UpdateLabel(text:string) {
         setLabel(text);
@@ -38,7 +38,7 @@ export default function About() {
     const skillBlocks = skills.map((skill, index) => {
 
         return (
-            <SkillBlock name={skill.name} icon={skill.icon} link={skill.link} key={index} onHover={UpdateLabel}/>
+            <SkillBlock name={skill.name} icon={skill.icon} link={skill.link} key={index} onHover={UpdateLabel} job={skill.job}/>
         )
     })
 
@@ -51,7 +51,7 @@ export default function About() {
                     INTERESTED?
                 </h2>
     
-                <div className="w-full flex flex-col-reverse h-fit justify-between items-center pt-6 lg:p-4 gap-4 lg:flex-row">
+                <div className="w-full flex flex-col-reverse h-fit justify-between items-center pt-6 lg:p-4 pb-8  gap-4 lg:flex-row">
 
                     <div className="w-full flex flex-col">
                         <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl title m-4 lg:border-l p-4 text-pretty">
@@ -62,7 +62,7 @@ export default function About() {
                             ensuring a seamless journey from start to finish.
                         </p>
                         <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl title m-4 pt-2 text-nowrap font-bold">
-                            YOUR NEW SWISS-ARMY-KNIFE: {label} 
+                            YOUR NEW {label} 
                         </p>
                         <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8 gap-4 p-4">
                             
@@ -83,5 +83,7 @@ export default function About() {
                 <div>
 
                 </div>
+
+                <hr className="w-[90%] mt-5"></hr>
             </div>)
 }
