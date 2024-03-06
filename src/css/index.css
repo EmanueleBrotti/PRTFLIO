@@ -21,7 +21,6 @@ body {
   color: var(--light);
   overflow-x: hidden;
   
-  
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -32,4 +31,8 @@ body {
 ::selection {
   color: var(--light);
   background: var(--green);
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none;
 }

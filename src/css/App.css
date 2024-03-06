@@ -1,28 +1,2 @@
-.title {
-    transition: all 0.5s;
-}
-
-.Dbuttons {
-    transition: color 0.3s ease-out, background-color 0.3s ease-out;
-    color: var(--light);
-    background-color: var(--dark);
-    border: var(--light) solid 1px;
-    border-radius: 0.6em;
-    text-decoration: none;
-    padding: 0.3em 0.5em;
-    text-wrap: nowrap;
-}
-
-.Dbuttons:hover {
-    color: var(--dark);
-    background-color: var(--light);
-}
-
-.noSelect {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
 
 
