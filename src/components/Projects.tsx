@@ -11,7 +11,7 @@ export default function Projects() {
                 </div>
     
                 
-                <div className="w-full h-fit bg-dark text-light p-4 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4 min-h-80">
+                <div className="w-full h-fit bg-dark text-light p-4 grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4 min-h-96">
                     {/*portfolio elements*/}
 
                 </div>

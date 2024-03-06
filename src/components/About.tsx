@@ -81,7 +81,7 @@ export default function About() {
                     TRUSTED BY:
                 </h3>
 
-                <div>
+                <div className="flex flex-col min-h-96">
 
                 </div>
 
