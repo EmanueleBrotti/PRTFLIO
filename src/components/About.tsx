@@ -10,6 +10,7 @@ const skills = [
     {name: "BOOTSTRAP", icon: "bootstrap-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DESIGNER"},
     {name: "JAVASCRIPT", icon: "javascript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/javascript-algorithms-and-data-structures-v8", job:"DEV"},
     {name: "TYPESCRIPT", icon: "typescript-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
+    {name: "JQUERY", icon: "jquery-plain", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
     {name: "REACT", icon: "react-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
     {name: "REDUX TOOLKIT", icon: "redux-original", link:"https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries", job:"DEV"},
     
