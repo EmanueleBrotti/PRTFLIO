@@ -6,7 +6,7 @@ import { useRef, useEffect } from "react"
 export default function Reveal ({children, delay=0}: {children: JSX.Element, delay?: number}) { //delay is optional
 
     const ref = useRef<HTMLDivElement>(null); 
-    const inView = useInView(ref, {once: true}); //used to see if div is visible, triggers once
+    const inView = useInView(ref); //used to see if div is visible, triggers once
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const {scrollYProgress} = useScroll({target: ref, offset: ["start end", "0.7 end"]}); //used to track the scroll progress, the first name is the obj position, the second the viewport
@@ -29,11 +29,11 @@ export default function Reveal ({children, delay=0}: {children: JSX.Element, del
         <motion.div className={`relative`} ref={ref} style={{opacity: opacity}}
             variants={{ //sort of keyframe but we can call the anims however we like
                 start: {    
-                    y: 40
+                    x: -70
                 },
 
                 visible: {
-                    y: 0
+                    x: 0
                 }
             }}
 
