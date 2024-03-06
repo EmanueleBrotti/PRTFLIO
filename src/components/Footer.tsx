@@ -3,7 +3,7 @@ export default function Footer() {
         <footer className="bg-dark p-4 h-[var(--navHeight)] border-t border-light flex flex-row items-center justify-between"> 
             <div>
                 <a href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/" target="_blank" rel="noreferrer">
-                <div className=" flex items-center justify-center p-2 rounded-lg text-4xl hover:text-green transition duration-300">
+                <div className=" flex items-center justify-center p-2 rounded-lg text-3xl hover:text-green transition duration-300">
                     <i className={`devicon-linkedin-plain`}></i>
                 </div>
                 </a>

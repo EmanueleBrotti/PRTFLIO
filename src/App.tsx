@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import About from "./components/About"
 import ContactMe from "./components/ContactMe"
 import Footer from "./components/Footer";
+import Blob from "./components/Blob";
 
 function App() {
 
@@ -19,10 +20,14 @@ function App() {
         <section id="intro">
           <Intro/>
         </section>
-      
+
+        <Blob type={0}/>
+
         <section id="projects">
           <Projects/>
         </section>
+
+        <Blob type={2}/>
       
         <section id="about">
           <About/>
