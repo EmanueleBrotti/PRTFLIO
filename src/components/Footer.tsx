@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-dark p-4 h-[var(--navHeight)] border-t border-light flex flex-row items-center justify-between"> 
+        <footer className="bg-dark p-4 h-[var(--navHeight)] border-t border-light flex flex-row items-center justify-between z-20"> 
             <div>
                 <a href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/" target="_blank" rel="noreferrer">
                 <div className=" flex items-center justify-center p-2 rounded-lg text-3xl hover:text-green transition duration-300">
