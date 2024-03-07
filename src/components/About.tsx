@@ -50,7 +50,7 @@ export default function About(props:{mouseV:Function}) {
 
     return ( <div className="w-full bg-light text-dark p-4 flex flex-col">
                 <Reveal>
-                <h2 className="text-3xl xsm:text-4xl sm:text-5xl md:text-6xl font-bold mt-5 transition-all duration-500 w-fit" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
+                <h2 className="text-3xl xsm:text-4xl sm:text-5xl md:text-6xl font-bold mt-5 transition-all duration-500 w-fit cursor-none" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
                     INTERESTED?
                 </h2>
                 </Reveal>
@@ -58,9 +58,9 @@ export default function About(props:{mouseV:Function}) {
     
                 <div className="w-full flex flex-col-reverse h-fit justify-between items-center pt-6 lg:p-4 pb-8  gap-4 lg:flex-row">
 
-                    <div className="w-full flex flex-col">
+                    <div className="w-full flex flex-col" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
                         <Reveal delay={0.2}>
-                        <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 lg:border-l p-4 text-pretty" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
+                        <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 lg:border-l p-4 text-pretty" >
                             Continuously expanding my programming skills since I was a kid,
                             i strive to maintain a flexible mindset in an ever-changing industry,
                             to deliver cutting-edge solutions to my clients. <br/>
@@ -70,11 +70,11 @@ export default function About(props:{mouseV:Function}) {
                         </Reveal>
                         
                             
-                            <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 pt-2 text-nowrap font-bold" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
+                            <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 pt-2 text-nowrap font-bold">
                                 YOUR NEW {label} 
                             </p>
                         
-                            <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8 gap-4 p-4" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
+                            <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8 gap-4 p-4">
                             
                                 {skillBlocks}
                         
@@ -93,7 +93,7 @@ export default function About(props:{mouseV:Function}) {
                 <hr className="w-[90%] mt-5"></hr>
                 <Reveal delay={0.2}>
                     <>
-                        <h3 className="text-2xl xsm:text-3xl sm:text-4xl md:text-5xl text-wrap xsm:text-nowrap transition-all duration-500 font-bold mt-5 w-fit" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
+                        <h3 className="text-2xl xsm:text-3xl sm:text-4xl md:text-5xl text-wrap xsm:text-nowrap transition-all duration-500 font-bold mt-5 w-fit cursor-none" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
                             TRUSTED BY:
                         </h3>
 

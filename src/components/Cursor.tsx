@@ -34,7 +34,6 @@ export default function Cursor (props:{variant:string}) {
             x: mousePos.x - 55,
             y: mousePos.y - 55,
             opacity: 1
-
         },
 
         text: {
