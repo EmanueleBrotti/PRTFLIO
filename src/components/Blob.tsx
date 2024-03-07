@@ -14,7 +14,7 @@ export default function Blob(props: {upsideDown?: boolean }) {
 
     return (
         <div className={"bg-light overflow-hidden m-0 p-0 border-0 -z-10"}>
-            <svg viewBox="74 144 50 6.5" xmlns="http://www.w3.org/2000/svg" transform={props.upsideDown ? "matrix(1, 0, 0, -1, 0, 0)" : "matrix(1, 0, 0, 1, 0, 0)"}>
+            <svg viewBox="74 144 50 7" xmlns="http://www.w3.org/2000/svg" transform={props.upsideDown ? "matrix(1, 0, 0, -1, 0, 0)" : "matrix(1, 0, 0, 1, 0, 0)"}>
                 <motion.path fill="#0e0e0e" variants={variants} initial="start" animate="end" transition={{repeat: Infinity, repeatType: "reverse", duration: 13, ease:"easeInOut"}}>
 
                 </motion.path>
