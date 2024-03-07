@@ -20,7 +20,6 @@ body {
   background-color: var(--dark);
   color: var(--light);
   overflow-x: hidden;
-  
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -33,6 +32,3 @@ body {
   background: var(--green);
 }
 
-.noScrollbar::-webkit-scrollbar {
-  display: none;
-}

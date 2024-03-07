@@ -25,7 +25,7 @@ const skills = [
 
 
 
-export default function About() {
+export default function About(props:{mouseV:Function}) {
 
     const [label, setLabel] = useState("SWISS ARMY KNIFE:"); //updates with the hovered skill
 
@@ -40,7 +40,7 @@ export default function About() {
     const skillBlocks = skills.map((skill, index) => {
 
         return (
-            <SkillBlock name={skill.name} icon={skill.icon} link={skill.link} key={index} onHover={UpdateLabel} job={skill.job}/>
+            <SkillBlock name={skill.name} icon={skill.icon} link={skill.link} key={index} onHover={UpdateLabel} job={skill.job} delay={index * 0.1}/>
         )
     })
 
@@ -50,7 +50,7 @@ export default function About() {
 
     return ( <div className="w-full bg-light text-dark p-4 flex flex-col">
                 <Reveal>
-                <h2 className="text-3xl xsm:text-4xl sm:text-5xl md:text-6xl font-bold mt-5 transition-all duration-500">
+                <h2 className="text-3xl xsm:text-4xl sm:text-5xl md:text-6xl font-bold mt-5 transition-all duration-500 w-fit" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
                     INTERESTED?
                 </h2>
                 </Reveal>
@@ -60,7 +60,7 @@ export default function About() {
 
                     <div className="w-full flex flex-col">
                         <Reveal delay={0.2}>
-                        <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 lg:border-l p-4 text-pretty">
+                        <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 lg:border-l p-4 text-pretty" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
                             Continuously expanding my programming skills since I was a kid,
                             i strive to maintain a flexible mindset in an ever-changing industry,
                             to deliver cutting-edge solutions to my clients. <br/>
@@ -68,31 +68,32 @@ export default function About() {
                             ensuring a seamless journey from start to finish.
                         </p>
                         </Reveal>
-                        <Reveal delay={0.3}>
-                            <>
-                            <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 pt-2 text-nowrap font-bold">
+                        
+                            
+                            <p className="text-lg xsm:text-xl sm:text-2xl md:text-3xl transition-all duration-500 m-4 pt-2 text-nowrap font-bold" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
                                 YOUR NEW {label} 
                             </p>
-                            <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8 gap-4 p-4">
+                        
+                            <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8 gap-4 p-4" onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")}>
                             
                                 {skillBlocks}
                         
                             </div>
-                            </>
-                        </Reveal>
+                            
+                        
                         
 
                     </div>
                     <Reveal delay={0.3}>
-                    <img src="https://placehold.co/400/orange/white"></img>
+                    <img onMouseEnter={() => props.mouseV("hidden")} onMouseLeave={() => props.mouseV("default")} src="https://placehold.co/400/orange/white"></img>
                     </Reveal>
                     
                 </div>
 
                 <hr className="w-[90%] mt-5"></hr>
-                <Reveal delay={0.4}>
+                <Reveal delay={0.2}>
                     <>
-                        <h3 className="text-2xl xsm:text-3xl sm:text-4xl md:text-5xl text-wrap xsm:text-nowrap transition-all duration-500 font-bold mt-5">
+                        <h3 className="text-2xl xsm:text-3xl sm:text-4xl md:text-5xl text-wrap xsm:text-nowrap transition-all duration-500 font-bold mt-5 w-fit" onMouseEnter={() => props.mouseV("text")} onMouseLeave={() => props.mouseV("default")}>
                             TRUSTED BY:
                         </h3>
 
