@@ -12,7 +12,7 @@ import Cursor from "./components/Cursor";
 
 function App() {
 
-  const [mouseVariant, setMouseVariant] = useState("default"); //used to change the mouse when hovering an element
+  const [mouseVariant, setMouseVariant] = useState("start"); //used to change the mouse when hovering an element
 
   return (
     <>
@@ -20,7 +20,7 @@ function App() {
 
       <Cursor variant={mouseVariant}/>
 
-      <main onMouseEnter={()=>{mouseVariant=="hidden" && setMouseVariant("default")}} onMouseLeave={() => setMouseVariant("hidden")}>
+      <main onMouseEnter={()=>{(mouseVariant=="hidden" || mouseVariant=="start") && setMouseVariant("default")}} onMouseLeave={() => setMouseVariant("hidden")}>
         <section id="intro">
           <Intro mouseV={setMouseVariant}/>
         </section>
