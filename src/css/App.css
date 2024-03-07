@@ -23,20 +23,20 @@
 @media (pointer: coarse) {
     /*  for devices that dont support cursors */
     #cursor {
-        display: none;
+        display: none !important;
     }
 }
 
 @media (pointer: none) {
     /*  for devices that dont support cursors */
     #cursor {
-        display: none;
+        display: none !important;
     }
 }
 
 @media (hover: none) {
     /*  for devices that dont support cursors */
     #cursor {
-        display: none;
+        display: none !important;
     }
 }
