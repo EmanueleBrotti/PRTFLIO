@@ -1,8 +1,7 @@
 import Reveal from "./Reveal";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactMe(props: { mouseV: Function }) {
     const defaultState = {
@@ -10,9 +9,7 @@ export default function ContactMe(props: { mouseV: Function }) {
         email: "",
         message: "",
         status: "",
-        captcha: null as string | null,
     }; //captcha uses a code
-    const captchaRef = useRef<ReCAPTCHA>(null);
     const [data, setData] = useState(defaultState);
 
     function handleChange(
@@ -30,11 +27,6 @@ export default function ContactMe(props: { mouseV: Function }) {
         animation.start("visible");
         setData({ ...data, status: "loading..." });
 
-        if (!data.captcha) {
-            //if empty (captcha gives a code if valid)
-            setData({ ...data, status: "Please check the captcha" });
-            return;
-        }
         const templateParams = {
             from_name: data.name,
             from_email: data.email,
@@ -54,9 +46,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                     email: "",
                     message: "",
                     status: "Email successfully sent!",
-                    captcha: null,
                 });
-                captchaRef.current?.reset();
             })
             .catch((err) => {
                 console.log(
@@ -67,9 +57,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                     email: "",
                     message: "",
                     status: "Error, please try again later :(",
-                    captcha: null,
                 });
-                captchaRef.current?.reset();
             });
     }
 
@@ -175,13 +163,6 @@ export default function ContactMe(props: { mouseV: Function }) {
                                 {data.status}
                             </motion.p>
                         </div>
-                        <ReCAPTCHA
-                            ref={captchaRef}
-                            sitekey="6Le_yJApAAAAAOOjbZdvh39F6haNojVbpqd96U18"
-                            onChange={(value) => {
-                                setData({ ...data, captcha: value });
-                            }}
-                        />
                     </div>
                 </form>
             </Reveal>

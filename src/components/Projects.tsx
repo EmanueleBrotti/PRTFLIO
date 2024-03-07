@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Blob from "./Blob";
 import Reveal from "./Reveal";
 
@@ -18,7 +19,7 @@ export default function Projects(props: { mouseV: Function }) {
             <Blob upsideDown />
 
             <div className="grid h-fit min-h-96 w-full grid-flow-row grid-cols-1 gap-4 bg-dark p-4 text-light sm:grid-cols-2">
-                {/*portfolio elements*/}
+                <Suspense>{/*portfolio elements, lazy loaded*/}</Suspense>
             </div>
         </>
     );

@@ -49,12 +49,11 @@ export default function Cursor(props: { variant: string }) {
 
     return (
         <>
-            {/*slower one*/}
             <motion.div
                 variants={variants}
                 initial="start"
                 animate={props.variant}
-                className="pointer-events-none fixed left-0 top-0 z-20 h-6 w-6  origin-center rounded-full bg-light opacity-0 mix-blend-difference"
+                className="pointer-events-none fixed left-0 top-0 z-20 h-6 w-6 origin-center rounded-full bg-light opacity-0 mix-blend-difference"
             />
         </>
     );

@@ -1,6 +1,7 @@
-import SkillBlock from "./SkillBlock";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Reveal from "./Reveal";
+
+const SkillBlock = lazy(() => import("./SkillBlock"));
 
 const skills = [
     {
@@ -139,11 +140,12 @@ export default function About(props: { mouseV: Function }) {
                     </p>
 
                     <div className=" grid grid-cols-3 gap-4 p-4 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-8">
-                        {skillBlocks}
+                        <Suspense>{skillBlocks}</Suspense>
                     </div>
                 </div>
                 <Reveal delay={0.3}>
                     <img
+                        loading="lazy"
                         onMouseEnter={() => props.mouseV("hidden")}
                         onMouseLeave={() => props.mouseV("default")}
                         src="https://placehold.co/400/orange/white"></img>
@@ -160,7 +162,11 @@ export default function About(props: { mouseV: Function }) {
                         TRUSTED BY:
                     </h3>
 
-                    <div className="flex min-h-96 flex-col"></div>
+                    <div className="flex min-h-96 flex-col">
+                        <Suspense>
+                            {/*portfolio projects, lazy loaded*/}
+                        </Suspense>
+                    </div>
                 </>
             </Reveal>
 
