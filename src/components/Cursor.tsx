@@ -53,6 +53,7 @@ export default function Cursor(props: { variant: string }) {
                 variants={variants}
                 initial="start"
                 animate={props.variant}
+                id="cursor"
                 className="pointer-events-none fixed left-0 top-0 z-20 h-6 w-6 origin-center rounded-full bg-light opacity-0 mix-blend-difference"
             />
         </>

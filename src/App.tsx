@@ -27,8 +27,7 @@ function App() {
                     (mouseVariant == "hidden" || mouseVariant == "start") &&
                         setMouseVariant("default");
                 }}
-                onMouseLeave={() => setMouseVariant("hidden")}
-                onTouchCancel={() => setMouseVariant("hidden")}>
+                onMouseLeave={() => setMouseVariant("hidden")}>
                 <section id="intro">
                     <Intro mouseV={setMouseVariant} />
                 </section>
