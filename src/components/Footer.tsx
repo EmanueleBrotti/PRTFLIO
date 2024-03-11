@@ -18,6 +18,14 @@ export default function Footer() {
                         <i className={`fa-solid fa-envelope`}></i>
                     </div>
                 </a>
+                <a
+                    href="https://github.com/EmanueleBrotti"
+                    target="_blank"
+                    rel="noreferrer">
+                    <div className=" flex items-center justify-center rounded-lg text-3xl transition duration-300 hover:text-green">
+                        <i className={`devicon-github-plain`}></i>
+                    </div>
+                </a>
             </div>
             <div className="flex flex-row">
                 <button
