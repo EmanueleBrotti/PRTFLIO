@@ -118,7 +118,7 @@ export default function About(props: { mouseV: Function }) {
                 </h2>
             </Reveal>
 
-            <div className="flex h-fit w-full flex-col-reverse items-center justify-between gap-4 pb-8 pt-6  lg:flex-row lg:p-4">
+            <div className="flex h-fit w-full flex-col-reverse items-center justify-between gap-4 pb-8 pt-6 lg:flex-row  lg:items-start lg:p-4">
                 <div
                     className="flex w-full flex-col"
                     onMouseEnter={() => props.mouseV("hidden")}

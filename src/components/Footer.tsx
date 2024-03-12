@@ -32,7 +32,7 @@ function Clock() {
 
 export default function Footer() {
     return (
-        <footer className="z-20 flex h-[var(--navHeight)] w-full flex-row items-center justify-between overflow-hidden border-t border-light bg-dark p-4">
+        <footer className="relative bottom-[var(--navHeight)] z-20 flex h-[var(--navHeight)] w-full flex-row items-center justify-between overflow-hidden border-t border-light bg-dark p-4">
             <div className="flex flex-row gap-4">
                 <a
                     href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/"

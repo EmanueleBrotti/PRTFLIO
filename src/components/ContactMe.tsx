@@ -76,7 +76,7 @@ export default function ContactMe(props: { mouseV: Function }) {
     const animation = useAnimation();
 
     return (
-        <div className="h-[calc(100vh-2*var(--navHeight))] min-h-fit overflow-hidden bg-dark p-4 text-light">
+        <div className="h-[calc(100vh-var(--navHeight))] min-h-fit overflow-hidden bg-dark p-4 text-light">
             <Reveal>
                 <h2
                     className="mt-5 w-fit cursor-none pb-8 text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
