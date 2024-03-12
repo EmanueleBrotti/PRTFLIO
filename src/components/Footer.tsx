@@ -57,7 +57,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer">
                     <div className=" flex items-center justify-center rounded-lg text-3xl transition duration-300 hover:text-green">
-                        <i className={`fa-solid fa-at`}></i>
+                        <i className={`fa-solid fa-envelope`}></i>
                     </div>
                 </a>
             </div>

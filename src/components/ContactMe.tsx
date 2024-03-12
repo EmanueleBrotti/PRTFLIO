@@ -2,6 +2,7 @@ import Reveal from "./Reveal";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactMe(props: { mouseV: Function }) {
     const defaultState = {
@@ -9,6 +10,7 @@ export default function ContactMe(props: { mouseV: Function }) {
         email: "",
         message: "",
         status: "",
+        captcha: false,
     }; //captcha uses a code
     const [data, setData] = useState(defaultState);
 
@@ -26,6 +28,15 @@ export default function ContactMe(props: { mouseV: Function }) {
         event.preventDefault();
         animation.start("visible");
         setData({ ...data, status: "loading..." });
+
+        if (!data.captcha) {
+            //captcha is false
+            setData({
+                ...data,
+                status: "Please complete the captcha",
+            });
+            return;
+        }
 
         const templateParams = {
             from_name: data.name,
@@ -46,6 +57,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                     email: "",
                     message: "",
                     status: "Email successfully sent!",
+                    captcha: false,
                 });
             })
             .catch((err) => {
@@ -57,6 +69,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                     email: "",
                     message: "",
                     status: "Error, please try again later :(",
+                    captcha: false,
                 });
             });
     }
@@ -76,7 +89,7 @@ export default function ContactMe(props: { mouseV: Function }) {
     const animation = useAnimation();
 
     return (
-        <div className="h-[calc(100vh-var(--navHeight))] min-h-fit overflow-hidden bg-dark p-4 text-light">
+        <div className="h-[calc(100vh-var(--navHeight))] min-h-[35em] overflow-hidden bg-dark p-4 text-light">
             <Reveal>
                 <h2
                     className="mt-5 w-fit cursor-none pb-8 text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
@@ -152,17 +165,28 @@ export default function ContactMe(props: { mouseV: Function }) {
                         <div className="flex h-max flex-row gap-4">
                             <input
                                 type="submit"
-                                className="h-full w-1/2 rounded-lg border border-dark bg-light p-2 font-bold text-dark transition duration-300 hover:bg-green"
+                                className="w-full rounded-lg border border-dark bg-light p-2 font-bold text-dark transition duration-300 hover:bg-green"
                             />
-
-                            <motion.p
-                                variants={variants}
-                                initial="hidden"
-                                animate={animation}
-                                className="sm:text-1xl m-0 text-nowrap p-0 text-lg transition-all duration-500 xsm:text-xl md:text-2xl">
-                                {data.status}
-                            </motion.p>
+                            <Turnstile
+                                siteKey={process.env.CAPTCHA_KEY as string}
+                                onSuccess={() => {
+                                    setData({ ...data, captcha: true });
+                                }}
+                                onError={() => {
+                                    setData({ ...data, captcha: false });
+                                }}
+                                onExpire={() => {
+                                    setData({ ...data, captcha: false });
+                                }}
+                            />
                         </div>
+                        <motion.p
+                            variants={variants}
+                            initial="hidden"
+                            animate={animation}
+                            className="sm:text-1xl m-0 text-nowrap p-0 text-lg transition-all duration-500 xsm:text-xl md:text-2xl">
+                            {data.status}
+                        </motion.p>
                     </div>
                 </form>
             </Reveal>
