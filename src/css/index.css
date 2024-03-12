@@ -3,32 +3,37 @@
 @tailwind utilities;
 
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Familjen Grotesk", sans-serif;
-  --light: #e0e0e0;
-  --dark: #0e0e0e;
-  --green: #96AA8A;
-  scroll-padding-top: var(--navHeight, 10px); /* updated in js*/
-  scroll-behavior: smooth;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Familjen Grotesk", sans-serif;
+    --light: #e0e0e0;
+    --dark: #0e0e0e;
+    --green: #96aa8a;
+    scroll-padding-top: var(--navHeight, 10px); /* updated in js*/
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0%;
-  background-color: var(--dark);
-  color: var(--light);
-  overflow-x: hidden;
+    margin: 0%;
+    background-color: var(--dark);
+    color: var(--light);
+    overflow-x: hidden;
 }
 
-::-moz-selection { /* Code for Firefox */
-  color: var(--light);
-  background: var(--green);
+::-moz-selection {
+    /* Code for Firefox */
+    color: var(--light);
+    background: var(--green);
 }
 
 ::selection {
-  color: var(--light);
-  background: var(--green);
+    color: var(--light);
+    background: var(--green);
 }
 
+#root {
+    width: 100vw;
+    height: 100vh;
+}

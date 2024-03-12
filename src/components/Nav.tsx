@@ -15,7 +15,7 @@ export default function Nav() {
     return (
         <nav
             ref={navRef}
-            className="fixed z-10 flex w-screen flex-row items-center justify-between border-b border-light bg-dark p-2 text-light">
+            className="fixed z-10 flex w-screen flex-row items-center justify-between overflow-hidden border-b border-light bg-dark p-2 text-light">
             <a href="#intro" className="text-nowrap p-2 text-xs xsm:text-sm">
                 EMANUELE BROTTI, 2024 ©
             </a>
@@ -26,7 +26,7 @@ export default function Nav() {
                         document.getElementById("projects")?.scrollIntoView()
                     }>
                     <span className="hidden xsm:block">PORTFOLIO</span>
-                    <i className="fa-solid fa-image xsm:hidden"></i>
+                    <i className="fa-solid fa-layer-group xsm:hidden"></i>
                 </button>
                 <button
                     className="select-none rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
@@ -34,7 +34,7 @@ export default function Nav() {
                         document.getElementById("about")?.scrollIntoView()
                     }>
                     <span className="hidden xsm:block">ABOUT</span>
-                    <i className="fa-solid fa-circle-user xsm:hidden"></i>
+                    <i className="fa-solid fa-user xsm:hidden"></i>
                 </button>
                 <button
                     className="select-none text-nowrap rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
@@ -42,7 +42,7 @@ export default function Nav() {
                         document.getElementById("contact")?.scrollIntoView()
                     }>
                     <span className="hidden xsm:block">CONTACT ME</span>
-                    <i className="fa-solid fa-paper-plane xsm:hidden"></i>
+                    <i className="fa-solid fa-comment xsm:hidden"></i>
                 </button>
             </div>
         </nav>
