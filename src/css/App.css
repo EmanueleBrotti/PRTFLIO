@@ -40,3 +40,15 @@
         display: none !important;
     }
 }
+
+@keyframes head {
+    0% {
+        transform: translateY(0.5em);
+    }
+    50% {
+        transform: translateY(-1em);
+    }
+    100% {
+        transform: translateY(0.5em);
+    }
+}

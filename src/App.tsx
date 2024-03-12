@@ -28,7 +28,7 @@ function App() {
                         setMouseVariant("default");
                 }}
                 onMouseLeave={() => setMouseVariant("hidden")}>
-                <section id="intro">
+                <section id="intro" className="overflow-hidden">
                     <Intro mouseV={setMouseVariant} />
                 </section>
 
