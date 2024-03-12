@@ -30,7 +30,7 @@ export default function Reveal({
 
     const opacity = useTransform(
         scrollYProgress,
-        [0, 0.2, 0.5, 0.85, 1],
+        [0, 0.2, 0.5, 0.8, 1],
         [0, 1, 1, 1, 0],
     ); //maps the scroll to 0 if it's at the edge, 1 if it's in the middle
 
@@ -38,7 +38,7 @@ export default function Reveal({
     const variants = {
         //sort of keyframe but we can call the anims however we like
         start: {
-            x: -40,
+            x: -20,
         },
 
         visible: {
@@ -60,7 +60,13 @@ export default function Reveal({
             variants={variants}
             initial="start"
             animate={animation}
-            transition={{ duration: 0.3, delay: delay }}>
+            transition={{
+                duration: 0.3,
+                delay: delay,
+                type: "spring",
+                stiffness: 240,
+                damping: 15,
+            }}>
             {children}
         </motion.div>
     );
