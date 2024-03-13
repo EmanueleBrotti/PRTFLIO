@@ -109,7 +109,7 @@ export default function About() {
         <div className="flex w-full flex-col bg-light p-4 text-dark">
             <Reveal>
                 <h2
-                    className="mt-5 w-fit cursor-none text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
+                    className="mt-2 w-fit cursor-none text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
                     onMouseEnter={() => dispatch(setCursorVariant("text"))}
                     onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     INTERESTED?
@@ -123,7 +123,7 @@ export default function About() {
                     onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     <Reveal delay={0.2}>
                         <p className="m-4 text-pretty p-4 text-lg transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl lg:border-l">
-                            Continuously expanding my programming skills since I
+                            Continuously expanding my programming skills since i
                             was a kid, i strive to maintain a flexible mindset
                             in an ever-changing industry, to deliver
                             cutting-edge solutions to my clients. <br />
