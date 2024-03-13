@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import Ema from "../3d/Ema";
+import Ema from "./Ema";
 import { Suspense, useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import { easing } from "maath";
@@ -56,7 +56,7 @@ export default function EmaLoader() {
         <Canvas
             ref={canvasRef}
             className="animate-[head_8s_ease_infinite] motion-reduce:animate-none">
-            <Suspense>
+            <Suspense fallback={null}>
                 <ambientLight intensity={0.4} />
                 <directionalLight intensity={1} position={[0, 0, 15]} />
                 <EmaHead angle={calculateEulerAngle()} />

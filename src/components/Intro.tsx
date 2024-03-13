@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-import EmaLoader from "./EmaLoader";
+import EmaLoader from "../3d/EmaLoader";
 
 export default function Intro(props: { mouseV: Function }) {
     return (
