@@ -1,4 +1,7 @@
 # PRTFLIO
+
+you can find the website [HERE](https://emab.pages.dev)
+
 a personal portfolio made with react, typescript, redux toolkit and tailwind.
 
 Using framer-motion and three.js for the animations and 3d models
