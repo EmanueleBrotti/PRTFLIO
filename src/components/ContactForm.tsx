@@ -87,9 +87,11 @@ export default function ContactForm(props: { mouseV: Function }) {
     const animation = useAnimation();
 
     return (
-        <form onSubmit={(event) => sendEmail(event)}>
+        <form
+            onSubmit={(event) => sendEmail(event)}
+            className="w-full md:w-1/2">
             <div
-                className="flex flex-col gap-4 md:w-fit"
+                className="flex flex-col gap-4"
                 onMouseEnter={() => props.mouseV("hidden")}
                 onMouseLeave={() => props.mouseV("default")}>
                 <div className="flex flex-row gap-4">
