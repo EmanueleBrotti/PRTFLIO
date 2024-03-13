@@ -1,8 +1,10 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import Ema from "./Ema";
-import { Suspense, useEffect, useState, useRef } from "react";
+import { Suspense, useRef } from "react";
 import * as THREE from "three";
 import { easing } from "maath";
+import { useAppSelector } from "../store/hooks";
+
 //split in 2 components for ease of use: EmaHead loads the model and animates the rotation
 function EmaHead(props: { angle: THREE.Euler }) {
     const Mesh = useRef<THREE.Group>(null);
@@ -22,16 +24,7 @@ function EmaHead(props: { angle: THREE.Euler }) {
 //emaloader contains the canvas, lights and calculates the canvas size / angle
 export default function EmaLoader() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const handleMouseMove = (event: MouseEvent) => {
-            setMousePosition({ x: event.clientX, y: event.clientY });
-        };
-
-        window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+    const mousePosition = useAppSelector((state) => state.cursor.position);
 
     function calculateEulerAngle() {
         if (!canvasRef.current) {

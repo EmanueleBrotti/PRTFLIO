@@ -22,6 +22,9 @@
 
 @media (pointer: coarse) {
     /*  for devices that dont support cursors */
+    body {
+        cursor: auto;
+    }
     #cursor {
         display: none !important;
     }
@@ -29,6 +32,9 @@
 
 @media (pointer: none) {
     /*  for devices that dont support cursors */
+    body {
+        cursor: auto;
+    }
     #cursor {
         display: none !important;
     }
@@ -36,6 +42,9 @@
 
 @media (hover: none) {
     /*  for devices that dont support cursors */
+    body {
+        cursor: auto;
+    }
     #cursor {
         display: none !important;
     }

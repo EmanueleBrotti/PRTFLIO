@@ -1,16 +1,21 @@
 import { Suspense } from "react";
 import Blob from "./Blob";
 import Reveal from "./Reveal";
+import { useAppDispatch } from "../store/hooks";
+import { setCursorVariant } from "../store/slices/cursorSlice";
 
-export default function Projects(props: { mouseV: Function }) {
+export default function Projects() {
+    const dispatch = useAppDispatch();
     return (
         <>
             <div className="flex h-fit w-full flex-col bg-light p-4 pb-0 text-dark">
                 <Reveal>
                     <h2
                         className="m-0 mt-5 w-fit cursor-none text-wrap text-3xl font-bold transition-all duration-500 xsm:text-nowrap xsm:text-4xl sm:text-5xl md:text-6xl"
-                        onMouseEnter={() => props.mouseV("title")}
-                        onMouseLeave={() => props.mouseV("default")}>
+                        onMouseEnter={() => dispatch(setCursorVariant("title"))}
+                        onMouseLeave={() =>
+                            dispatch(setCursorVariant("default"))
+                        }>
                         DON'T WASTE YOUR TIME, <br></br>
                         HERE'S MY PORTFOLIO.
                     </h2>

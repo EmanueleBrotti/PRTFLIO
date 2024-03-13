@@ -1,4 +1,6 @@
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { setCursorVariant } from "../store/slices/cursorSlice";
 import Reveal from "./Reveal";
 
 const SkillBlock = lazy(() => import("./SkillBlock"));
@@ -82,12 +84,9 @@ const skills = [
     //poi fai git php e rust
 ];
 
-export default function About(props: { mouseV: Function }) {
-    const [label, setLabel] = useState("SWISS ARMY KNIFE:"); //updates with the hovered skill
-
-    function UpdateLabel(text: string) {
-        setLabel(text);
-    }
+export default function About() {
+    const dispatch = useAppDispatch();
+    const label = useAppSelector((state) => state.about.label);
 
     /////
 
@@ -98,7 +97,6 @@ export default function About(props: { mouseV: Function }) {
                 icon={skill.icon}
                 link={skill.link}
                 key={index}
-                onHover={UpdateLabel}
                 job={skill.job}
                 delay={index * 0.1}
             />
@@ -112,8 +110,8 @@ export default function About(props: { mouseV: Function }) {
             <Reveal>
                 <h2
                     className="mt-5 w-fit cursor-none text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
-                    onMouseEnter={() => props.mouseV("text")}
-                    onMouseLeave={() => props.mouseV("default")}>
+                    onMouseEnter={() => dispatch(setCursorVariant("text"))}
+                    onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     INTERESTED?
                 </h2>
             </Reveal>
@@ -121,8 +119,8 @@ export default function About(props: { mouseV: Function }) {
             <div className="flex h-fit w-full flex-col-reverse items-center justify-between gap-4 pb-8 pt-6 lg:flex-row  lg:items-start lg:p-4">
                 <div
                     className="flex w-full flex-col"
-                    onMouseEnter={() => props.mouseV("hidden")}
-                    onMouseLeave={() => props.mouseV("default")}>
+                    onMouseEnter={() => dispatch(setCursorVariant("hidden"))}
+                    onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     <Reveal delay={0.2}>
                         <p className="m-4 text-pretty p-4 text-lg transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl lg:border-l">
                             Continuously expanding my programming skills since I
@@ -146,8 +144,12 @@ export default function About(props: { mouseV: Function }) {
                 <Reveal delay={0.3}>
                     <img
                         loading="lazy"
-                        onMouseEnter={() => props.mouseV("hidden")}
-                        onMouseLeave={() => props.mouseV("default")}
+                        onMouseEnter={() =>
+                            dispatch(setCursorVariant("hidden"))
+                        }
+                        onMouseLeave={() =>
+                            dispatch(setCursorVariant("default"))
+                        }
                         src="https://placehold.co/400/orange/white"></img>
                 </Reveal>
             </div>
@@ -157,8 +159,10 @@ export default function About(props: { mouseV: Function }) {
                 <>
                     <h3
                         className="mt-5 w-fit cursor-none text-wrap text-2xl font-bold transition-all duration-500 xsm:text-nowrap xsm:text-3xl sm:text-4xl md:text-5xl"
-                        onMouseEnter={() => props.mouseV("text")}
-                        onMouseLeave={() => props.mouseV("default")}>
+                        onMouseEnter={() => dispatch(setCursorVariant("text"))}
+                        onMouseLeave={() =>
+                            dispatch(setCursorVariant("default"))
+                        }>
                         TRUSTED BY:
                     </h3>
 

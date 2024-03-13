@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
+import { useAppDispatch } from "../store/hooks";
+import { setCursorVariant } from "../store/slices/cursorSlice";
 
 const defaultState = {
     //used to reset and init the form
@@ -24,7 +26,9 @@ const variants = {
     },
 };
 
-export default function ContactForm(props: { mouseV: Function }) {
+export default function ContactForm() {
+    const dispatch = useAppDispatch();
+
     const captchaRef = useRef<TurnstileInstance>(null); //to reset the captcha
 
     const [data, setData] = useState(defaultState);
@@ -92,8 +96,8 @@ export default function ContactForm(props: { mouseV: Function }) {
             className="w-full md:w-1/2">
             <div
                 className="flex flex-col gap-4"
-                onMouseEnter={() => props.mouseV("hidden")}
-                onMouseLeave={() => props.mouseV("default")}>
+                onMouseEnter={() => dispatch(setCursorVariant("hidden"))}
+                onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                 <div className="flex flex-row gap-4">
                     {" "}
                     {/* name and email */}

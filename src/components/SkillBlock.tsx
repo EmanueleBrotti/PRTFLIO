@@ -1,15 +1,17 @@
 import "../css/App.css";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useAppDispatch } from "../store/hooks";
+import { setLabel } from "../store/slices/aboutSlice";
 
 export default function SkillBlock(props: {
     name: string;
     icon: string;
     link: string;
-    onHover: Function;
     job: string;
     delay: number;
 }) {
+    const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement>(null); //animation stuff
     const inView = useInView(ref);
     const prefersReducedMotion = window.matchMedia(
@@ -40,8 +42,10 @@ export default function SkillBlock(props: {
             href={props.link}
             target="_blank"
             rel="noreferrer"
-            onMouseEnter={() => props.onHover(`${props.name} ${props.job}.`)}
-            onMouseLeave={() => props.onHover("SWISS ARMY KNIFE:")}>
+            onMouseEnter={() =>
+                dispatch(setLabel(`${props.name} ${props.job}.`))
+            }
+            onMouseLeave={() => dispatch(setLabel("SWISS ARMY KNIFE:"))}>
             <motion.div
                 ref={ref}
                 className="group relative"

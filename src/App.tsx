@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import "./css/App.css";
 //import {motion, useInView, useAnimation} from "framer-motion";
 import Intro from "./components/Intro";
@@ -11,44 +11,48 @@ const ContactMe = lazy(() => import("./components/ContactMe"));
 const Footer = lazy(() => import("./components/Footer"));
 const Cursor = lazy(() => import("./components/Cursor"));
 
+import { useAppSelector, useAppDispatch } from "./store/hooks";
+import { setCursorVariant } from "./store/slices/cursorSlice";
+
 function App() {
-    const [mouseVariant, setMouseVariant] = useState("start"); //used to change the mouse when hovering an element
+    const mouseVariant = useAppSelector((state) => state.cursor.variant);
+    const dispatch = useAppDispatch();
 
     return (
         <>
             <Nav />
 
             <Suspense>
-                <Cursor variant={mouseVariant} />
+                <Cursor />
             </Suspense>
 
             <main
                 onMouseEnter={() => {
                     (mouseVariant == "hidden" || mouseVariant == "start") &&
-                        setMouseVariant("default");
+                        dispatch(setCursorVariant("default"));
                 }}
-                onMouseLeave={() => setMouseVariant("hidden")}>
+                onMouseLeave={() => dispatch(setCursorVariant("hidden"))}>
                 <section id="intro" className="overflow-hidden">
-                    <Intro mouseV={setMouseVariant} />
+                    <Intro />
                 </section>
 
                 <Blob />
 
                 <section id="projects">
-                    <Projects mouseV={setMouseVariant} />
+                    <Projects />
                 </section>
 
                 <Blob />
 
                 <section id="about">
                     <Suspense>
-                        <About mouseV={setMouseVariant} />
+                        <About />
                     </Suspense>
                 </section>
 
                 <section id="contact">
                     <Suspense>
-                        <ContactMe mouseV={setMouseVariant} />
+                        <ContactMe />
                     </Suspense>
                 </section>
             </main>

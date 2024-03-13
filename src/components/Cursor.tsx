@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { setCursorPosition } from "../store/slices/cursorSlice";
 
-export default function Cursor(props: { variant: string }) {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+export default function Cursor() {
+    const dispatch = useAppDispatch();
+    const mousePos = useAppSelector((state) => state.cursor.position);
+    const cursorVariant = useAppSelector((state) => state.cursor.variant);
 
     useEffect(() => {
         function mouseMove(e: MouseEvent) {
-            setMousePos({ x: e.clientX, y: e.clientY });
+            dispatch(setCursorPosition({ x: e.clientX, y: e.clientY }));
         }
 
         window.addEventListener("mousemove", mouseMove);
@@ -21,28 +25,24 @@ export default function Cursor(props: { variant: string }) {
             opacity: 0,
         },
         hidden: {
-            x: mousePos.x,
-            y: mousePos.y,
             opacity: 0,
         },
         default: {
-            x: mousePos.x - 10,
-            y: mousePos.y - 10,
             opacity: 1,
         },
         title: {
             height: "8rem",
             width: "8rem",
-            x: mousePos.x - 55,
-            y: mousePos.y - 55,
+            x: "-4rem",
+            y: "-4rem",
             opacity: 1,
         },
 
         text: {
             height: "5rem",
             width: "5rem",
-            x: mousePos.x - 30,
-            y: mousePos.y - 30,
+            x: "-2.5rem",
+            y: "-2.5rem",
             opacity: 1,
         },
     };
@@ -50,9 +50,10 @@ export default function Cursor(props: { variant: string }) {
     return (
         <>
             <motion.div
+                style={{ left: mousePos.x - 5, top: mousePos.y - 5 }}
                 variants={variants}
                 initial="start"
-                animate={props.variant}
+                animate={cursorVariant}
                 id="cursor"
                 className="pointer-events-none fixed left-0 top-0 z-30 h-6 w-6 origin-center rounded-full bg-light opacity-0 mix-blend-difference"
             />
