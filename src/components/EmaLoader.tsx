@@ -7,7 +7,7 @@ import { easing } from "maath";
 function EmaHead(props: { angle: THREE.Euler }) {
     const Mesh = useRef<THREE.Group>(null);
     //add smooth rotation
-    useFrame((state, dv) => {
+    useFrame((_, dv) => {
         if (Mesh.current) {
             easing.dampE(Mesh.current.rotation, props.angle, 0.2, dv);
         }
