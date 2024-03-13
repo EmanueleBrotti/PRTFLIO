@@ -1,10 +1,12 @@
 import Reveal from "./Reveal";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
 export default function ContactMe(props: { mouseV: Function }) {
+    const captchaRef = useRef<TurnstileInstance>(null);
+
     const defaultState = {
         name: "",
         email: "",
@@ -169,6 +171,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                             />
                             <Turnstile
                                 siteKey={process.env.CAPTCHA_KEY as string}
+                                ref={captchaRef}
                                 onSuccess={() => {
                                     setData({ ...data, captcha: true });
                                 }}
@@ -177,6 +180,7 @@ export default function ContactMe(props: { mouseV: Function }) {
                                 }}
                                 onExpire={() => {
                                     setData({ ...data, captcha: false });
+                                    captchaRef.current?.reset();
                                 }}
                             />
                         </div>

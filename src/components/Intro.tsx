@@ -3,8 +3,8 @@ import EmaLoader from "./EmaLoader";
 
 export default function Intro(props: { mouseV: Function }) {
     return (
-        <div className="g-4 flex flex-col xsm:flex-row">
-            <div className="flex h-fit w-2/3 flex-col p-4 xsm:h-screen ">
+        <div className="h-[40em] w-full overflow-hidden md:h-fit">
+            <div className="relative flex h-screen w-2/3 flex-col p-4">
                 <Reveal>
                     <h1
                         className="w-fit cursor-none text-nowrap pt-14 text-4xl font-bold transition-all duration-500 xsm:text-5xl sm:text-6xl md:text-8xl lg:text-9xl"
@@ -25,7 +25,7 @@ export default function Intro(props: { mouseV: Function }) {
                     </h2>
                 </Reveal>
             </div>
-            <div className="top-60 h-[80vh] self-center xsm:relative xsm:right-16 xsm:h-screen md:right-8 lg:-right-24 xl:top-0 ">
+            <div className="absolute right-0 top-0 -z-10 h-[40em] w-full md:h-full lg:-right-20 lg:w-1/2">
                 <EmaLoader />
             </div>
         </div>
