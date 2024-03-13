@@ -21,7 +21,7 @@ export default function Nav() {
             </a>
             <div className="mr-4 flex flex-row gap-4">
                 <button
-                    className="select-none rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
+                    className="select-none rounded-sm p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
                     onClick={() =>
                         document.getElementById("projects")?.scrollIntoView()
                     }>
@@ -29,7 +29,7 @@ export default function Nav() {
                     <i className="fa-solid fa-layer-group xsm:hidden"></i>
                 </button>
                 <button
-                    className="select-none rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
+                    className="select-none rounded-sm p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
                     onClick={() =>
                         document.getElementById("about")?.scrollIntoView()
                     }>
@@ -37,7 +37,7 @@ export default function Nav() {
                     <i className="fa-solid fa-user xsm:hidden"></i>
                 </button>
                 <button
-                    className="select-none text-nowrap rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
+                    className="select-none text-nowrap rounded-sm p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
                     onClick={() =>
                         document.getElementById("contact")?.scrollIntoView()
                     }>

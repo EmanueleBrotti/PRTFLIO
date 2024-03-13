@@ -38,7 +38,7 @@ export default function Footer() {
                     href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/"
                     target="_blank"
                     rel="noreferrer">
-                    <div className=" flex items-center justify-center rounded-lg text-3xl transition duration-300 hover:text-green">
+                    <div className=" flex items-center justify-center text-3xl transition duration-300 hover:text-green">
                         <i className={`devicon-linkedin-plain`}></i>
                     </div>
                 </a>
@@ -47,7 +47,7 @@ export default function Footer() {
                     href="https://github.com/EmanueleBrotti"
                     target="_blank"
                     rel="noreferrer">
-                    <div className=" flex items-center justify-center rounded-lg text-3xl transition duration-300 hover:text-green">
+                    <div className=" flex items-center justify-center text-3xl transition duration-300 hover:text-green">
                         <i className={`devicon-github-plain`}></i>
                     </div>
                 </a>
@@ -56,7 +56,7 @@ export default function Footer() {
                     href="mailto:emanuelebrotti@gmail.com?subject=(your name) from Ema's Portfolio&body=Please include your name, where you work, your contact info and a brief description of your vision:"
                     target="_blank"
                     rel="noreferrer">
-                    <div className=" flex items-center justify-center rounded-lg text-3xl transition duration-300 hover:text-green">
+                    <div className=" flex items-center justify-center text-3xl transition duration-300 hover:text-green">
                         <i className={`fa-solid fa-envelope`}></i>
                     </div>
                 </a>
@@ -64,7 +64,7 @@ export default function Footer() {
             <Clock />
             <div className="flex flex-row">
                 <button
-                    className=" ml-2 select-none rounded-lg p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
+                    className=" ml-2 select-none rounded-sm p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
                     onClick={() =>
                         document.getElementById("intro")?.scrollIntoView()
                     }>

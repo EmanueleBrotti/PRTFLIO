@@ -1,3 +1,6 @@
+//this file is just the gltf model without any extra logic. The scale, rotation and size
+//is only to give it the correct default orientation
+
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
@@ -10,7 +13,6 @@ type GLTFResult = GLTF & {
 };
 
 export default function Ema(props: JSX.IntrinsicElements["group"]) {
-    //loads the model
     const { nodes } = useGLTF("/3d/ema-transformed.glb") as GLTFResult;
 
     return (

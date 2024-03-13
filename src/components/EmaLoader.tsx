@@ -3,7 +3,7 @@ import Ema from "../3d/Ema";
 import { Suspense, useEffect, useState, useRef } from "react";
 import * as THREE from "three";
 import { easing } from "maath";
-
+//split in 2 components for ease of use: EmaHead loads the model and animates the rotation
 function EmaHead(props: { angle: THREE.Euler }) {
     const Mesh = useRef<THREE.Group>(null);
     //add smooth rotation
@@ -19,50 +19,47 @@ function EmaHead(props: { angle: THREE.Euler }) {
         </group>
     );
 }
-
+//emaloader contains the canvas, lights and calculates the canvas size / angle
 export default function EmaLoader() {
-    //to make it look at the mouse
-    const CanvasRef = useRef<HTMLCanvasElement>(null);
-
-    const [mouse, setMouse] = useState({ x: 0, y: 0 });
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        function mouseMove(e: MouseEvent) {
-            setMouse({ x: e.clientX, y: e.clientY });
-        }
-
-        window.addEventListener("mousemove", mouseMove);
-
-        return () => {
-            window.removeEventListener("mousemove", mouseMove);
+        const handleMouseMove = (event: MouseEvent) => {
+            setMousePosition({ x: event.clientX, y: event.clientY });
         };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
-    function calculateAngle() {
-        if (!CanvasRef.current) {
+    function calculateEulerAngle() {
+        if (!canvasRef.current) {
             return new THREE.Euler(0.05, 0.05, 0);
         }
-        const Prect = CanvasRef.current.getBoundingClientRect(); //parent rect
+
+        const canvasRect = canvasRef.current.getBoundingClientRect();
         const center = {
-            x: Prect.left + Prect.width / 2 + window.scrollX,
-            y: Prect.top + Prect.height / 2 + window.scrollY,
-        };
-        const offset = {
-            x: mouse.x - center.x > 0 ? 1 : -1, //we only care about the sign
-            y: mouse.y - center.y > 0 ? 1 : -1,
+            x: canvasRect.left + canvasRect.width / 2 + window.scrollX,
+            y: canvasRect.top + canvasRect.height / 2 + window.scrollY,
         };
 
-        return new THREE.Euler(offset.y * 0.15, offset.x * 0.15, 0);
+        const offset = {
+            x: mousePosition.x - center.x > 0 ? 1 : -1,
+            y: mousePosition.y - center.y > 0 ? 1 : -1,
+        };
+
+        return new THREE.Euler(offset.y * 0.1, offset.x * 0.08, 0);
     }
 
     return (
         <Canvas
-            ref={CanvasRef}
+            ref={canvasRef}
             className="animate-[head_8s_ease_infinite] motion-reduce:animate-none">
             <Suspense>
                 <ambientLight intensity={0.4} />
                 <directionalLight intensity={1} position={[0, 0, 15]} />
-                <EmaHead angle={calculateAngle()} />
+                <EmaHead angle={calculateEulerAngle()} />
             </Suspense>
         </Canvas>
     );
