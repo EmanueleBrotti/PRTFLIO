@@ -50,7 +50,7 @@ export default function Reveal({
         if (inView && !prefersReducedMotion) {
             animation.start("visible");
         }
-    }, [inView]);
+    }, [inView, animation, prefersReducedMotion]);
 
     return (
         <motion.div

@@ -23,7 +23,7 @@ function Clock() {
     time = time.split(", ")[1]; //removes the day of the week
 
     return (
-        <div className="g-4 flex select-none flex-row text-nowrap">
+        <div className="g-4 relative right-[8%] flex select-none flex-row place-self-center text-nowrap xsm:right-0">
             {`${time} `}
             <span className="hidden xsm:inline-block"> , CET (UTC+1)</span>
         </div>
@@ -35,6 +35,7 @@ export default function Footer() {
         <footer className="relative bottom-[var(--navHeight)] z-20 flex h-[var(--navHeight)] w-full cursor-auto flex-row items-center justify-between overflow-hidden border-t border-light bg-dark p-4">
             <div className="flex flex-row gap-4">
                 <a
+                    aria-label="linkedin"
                     href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/"
                     target="_blank"
                     rel="noreferrer">
@@ -44,6 +45,7 @@ export default function Footer() {
                 </a>
 
                 <a
+                    aria-label="github"
                     href="https://github.com/EmanueleBrotti"
                     target="_blank"
                     rel="noreferrer">
@@ -53,6 +55,7 @@ export default function Footer() {
                 </a>
 
                 <a
+                    aria-label="send email"
                     href="mailto:emanuelebrotti@gmail.com?subject=(your name) from Ema's Portfolio"
                     target="_blank"
                     rel="noreferrer">
@@ -64,6 +67,7 @@ export default function Footer() {
             <Clock />
             <div className="flex flex-row">
                 <button
+                    aria-label="back to top"
                     className=" ml-2 select-none rounded-sm p-2 text-2xl transition duration-300 hover:text-green xsm:text-base xsm:hover:bg-green xsm:hover:text-dark"
                     onClick={() =>
                         document.getElementById("intro")?.scrollIntoView()

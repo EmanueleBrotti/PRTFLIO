@@ -145,6 +145,7 @@ export default function About() {
                     <img
                         className="cursor-auto"
                         loading="lazy"
+                        alt="Emanuele Brotti"
                         onMouseEnter={() =>
                             dispatch(setCursorVariant("hidden"))
                         }

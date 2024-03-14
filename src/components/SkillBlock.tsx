@@ -35,10 +35,11 @@ export default function SkillBlock(props: {
         if (inView && !prefersReducedMotion) {
             animation.start("visible");
         }
-    }, [inView]);
+    }, [inView, animation, prefersReducedMotion]);
 
     return (
         <a
+            aria-label={props.name}
             href={props.link}
             target="_blank"
             rel="noreferrer"

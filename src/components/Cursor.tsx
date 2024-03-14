@@ -18,7 +18,7 @@ export default function Cursor() {
         return () => {
             window.removeEventListener("mousemove", mouseMove);
         };
-    }, []);
+    }, [dispatch]);
 
     const variants = {
         start: {
