@@ -1,7 +1,9 @@
-import Reveal from "./Reveal";
-import EmaLoader from "../3d/EmaLoader";
-import { useAppDispatch } from "../store/hooks";
-import { setCursorVariant } from "../store/slices/cursorSlice";
+import Reveal from "../animators/Reveal";
+import { useAppDispatch } from "../../store/hooks";
+import { setCursorVariant } from "../../store/slices/cursorSlice";
+import { Suspense, lazy } from "react";
+
+const EmaLoader = lazy(() => import("../../3d/EmaLoader"));
 
 export default function Intro() {
     const dispatch = useAppDispatch();
@@ -33,8 +35,10 @@ export default function Intro() {
                     </h2>
                 </Reveal>
             </div>
-            <div className="absolute right-0 top-0 -z-10 h-[40em] w-full md:h-full lg:-right-20 lg:w-1/2">
-                <EmaLoader />
+            <div className="absolute right-0 top-0 -z-10 h-[40em] w-full bg-dark md:h-full lg:-right-20 lg:w-1/2">
+                <Suspense fallback={null}>
+                    <EmaLoader />
+                </Suspense>
             </div>
         </div>
     );

@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
-import { useAppDispatch } from "../store/hooks";
-import { setCursorVariant } from "../store/slices/cursorSlice";
+import { useAppDispatch } from "../../../store/hooks";
+import { setCursorVariant } from "../../../store/slices/cursorSlice";
 
 const defaultState = {
     //used to reset and init the form
@@ -144,7 +144,7 @@ export default function ContactForm() {
                     id="message"
                     name="message"
                     required
-                    placeholder="Please include as many infos as possible, like where you work, your timeline, your vision, etc."
+                    placeholder="Please include as many infos as possible (where you work, your timeline, your vision, etc.)"
                     maxLength={2000}
                     className="max-h-80 min-h-40 resize-none rounded-lg border border-light  bg-dark p-2 text-light"
                     onClick={() =>

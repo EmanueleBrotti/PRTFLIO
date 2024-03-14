@@ -1,6 +1,6 @@
 import Phone from "./Phone";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
+import { useRef } from "react";
 import * as THREE from "three";
 
 function PhoneModel() {
@@ -22,12 +22,11 @@ function PhoneModel() {
 
 export default function PhoneLoader() {
     return (
-        <Canvas className="animate-[head_8s_ease_infinite]">
+        <Canvas className="animate-[head_8s_ease_infinite] motion-reduce:animate-none">
             <ambientLight intensity={0.4} />
             <directionalLight intensity={1} position={[0, 6, 15]} />
-            <Suspense fallback={null}>
-                <PhoneModel />
-            </Suspense>
+
+            <PhoneModel />
         </Canvas>
     );
 }

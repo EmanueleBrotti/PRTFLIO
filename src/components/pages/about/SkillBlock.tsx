@@ -1,8 +1,7 @@
-import "../css/App.css";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { useAppDispatch } from "../store/hooks";
-import { setLabel } from "../store/slices/aboutSlice";
+import { useAppDispatch } from "../../../store/hooks";
+import { setLabel } from "../../../store/slices/aboutSlice";
 
 export default function SkillBlock(props: {
     name: string;

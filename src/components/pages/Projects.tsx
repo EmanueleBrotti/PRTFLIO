@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import Blob from "./Blob";
-import Reveal from "./Reveal";
-import { useAppDispatch } from "../store/hooks";
-import { setCursorVariant } from "../store/slices/cursorSlice";
+import Blob from "../misc/Blob";
+import Reveal from "../animators/Reveal";
+import { useAppDispatch } from "../../store/hooks";
+import { setCursorVariant } from "../../store/slices/cursorSlice";
 
 export default function Projects() {
     const dispatch = useAppDispatch();

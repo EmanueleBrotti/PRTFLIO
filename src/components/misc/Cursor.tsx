@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useAppSelector, useAppDispatch } from "../store/hooks";
-import { setCursorPosition } from "../store/slices/cursorSlice";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import { setCursorPosition } from "../../store/slices/cursorSlice";
 
 export default function Cursor() {
     const dispatch = useAppDispatch();

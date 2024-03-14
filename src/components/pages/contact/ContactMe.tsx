@@ -1,8 +1,10 @@
-import Reveal from "./Reveal";
+import Reveal from "../../animators/Reveal";
 import ContactForm from "./ContactForm";
-import PhoneLoader from "../3d/PhoneLoader";
-import { useAppDispatch } from "../store/hooks";
-import { setCursorVariant } from "../store/slices/cursorSlice";
+import { useAppDispatch } from "../../../store/hooks";
+import { setCursorVariant } from "../../../store/slices/cursorSlice";
+import { Suspense, lazy } from "react";
+
+const PhoneLoader = lazy(() => import("../../../3d/PhoneLoader"));
 
 export default function ContactMe() {
     const dispatch = useAppDispatch();
@@ -22,7 +24,9 @@ export default function ContactMe() {
             </Reveal>
 
             <div className="absolute right-0 top-10 -z-10 h-[40em] w-full md:h-full md:w-1/2 lg:-right-20">
-                <PhoneLoader />
+                <Suspense>
+                    <PhoneLoader />
+                </Suspense>
             </div>
         </div>
     );

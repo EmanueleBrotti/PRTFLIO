@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { setCursorVariant } from "../store/slices/cursorSlice";
-import Reveal from "./Reveal";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setCursorVariant } from "../../../store/slices/cursorSlice";
+import Reveal from "../../animators/Reveal";
 
 const SkillBlock = lazy(() => import("./SkillBlock"));
 
