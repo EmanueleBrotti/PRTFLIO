@@ -109,22 +109,22 @@ export default function About() {
         <div className="flex w-full flex-col bg-light p-4 text-dark">
             <Reveal>
                 <h2
-                    className="mt-2 w-fit cursor-none text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
+                    className="mt-4 w-fit cursor-none text-3xl font-bold transition-all duration-500 xsm:text-4xl sm:text-5xl md:text-6xl"
                     onMouseEnter={() => dispatch(setCursorVariant("text"))}
                     onMouseLeave={() => dispatch(setCursorVariant("default"))}>
-                    INTERESTED?
+                    ABOUT ME:
                 </h2>
             </Reveal>
 
             <div className="flex h-fit w-full flex-col-reverse items-center justify-between gap-4 pb-8 pt-6 lg:flex-row  lg:items-start lg:p-4">
                 <div
-                    className="flex w-full flex-col"
+                    className="flex w-full cursor-auto flex-col"
                     onMouseEnter={() => dispatch(setCursorVariant("hidden"))}
                     onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     <Reveal delay={0.2}>
                         <p className="m-4 text-pretty p-4 text-lg transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl lg:border-l">
-                            Continuously expanding my programming skills since i
-                            was a kid, i strive to maintain a flexible mindset
+                            Continuously expanding my programming skills since I
+                            was a kid, I strive to maintain a flexible mindset
                             in an ever-changing industry, to deliver
                             cutting-edge solutions to my clients. <br />
                             My goal is to provide an exceptional digital
@@ -133,7 +133,7 @@ export default function About() {
                         </p>
                     </Reveal>
 
-                    <p className="m-4 text-nowrap pt-2 text-lg font-bold transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl">
+                    <p className="m-4 select-none text-nowrap pt-2 text-lg font-bold transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl">
                         YOUR NEW {label}
                     </p>
 
@@ -143,6 +143,7 @@ export default function About() {
                 </div>
                 <Reveal delay={0.3}>
                     <img
+                        className="cursor-auto"
                         loading="lazy"
                         onMouseEnter={() =>
                             dispatch(setCursorVariant("hidden"))

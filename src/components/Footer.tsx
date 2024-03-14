@@ -32,7 +32,7 @@ function Clock() {
 
 export default function Footer() {
     return (
-        <footer className="relative bottom-[var(--navHeight)] z-20 flex h-[var(--navHeight)] w-full flex-row items-center justify-between overflow-hidden border-t border-light bg-dark p-4">
+        <footer className="relative bottom-[var(--navHeight)] z-20 flex h-[var(--navHeight)] w-full cursor-auto flex-row items-center justify-between overflow-hidden border-t border-light bg-dark p-4">
             <div className="flex flex-row gap-4">
                 <a
                     href="https://www.linkedin.com/in/emanuele-brotti-3329b22b6/"
@@ -53,7 +53,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                    href="mailto:emanuelebrotti@gmail.com?subject=(your name) from Ema's Portfolio&body=Please include your name, where you work, your contact info and a brief description of your vision:"
+                    href="mailto:emanuelebrotti@gmail.com?subject=(your name) from Ema's Portfolio"
                     target="_blank"
                     rel="noreferrer">
                     <div className=" flex items-center justify-center text-3xl transition duration-300 hover:text-green">

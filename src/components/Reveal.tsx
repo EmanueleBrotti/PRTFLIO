@@ -30,7 +30,7 @@ export default function Reveal({
 
     const opacity = useTransform(
         scrollYProgress,
-        [0, 0.2, 0.5, 0.8, 1],
+        [0, 0.2, 0.5, 0.82, 1],
         [0, 1, 1, 1, 0],
     ); //maps the scroll to 0 if it's at the edge, 1 if it's in the middle
 

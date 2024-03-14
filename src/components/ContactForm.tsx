@@ -95,7 +95,7 @@ export default function ContactForm() {
             onSubmit={(event) => sendEmail(event)}
             className="w-full md:w-1/2">
             <div
-                className="flex flex-col gap-4"
+                className="flex cursor-auto flex-col gap-4"
                 onMouseEnter={() => dispatch(setCursorVariant("hidden"))}
                 onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                 <div className="flex flex-row gap-4">
@@ -144,7 +144,7 @@ export default function ContactForm() {
                     id="message"
                     name="message"
                     required
-                    placeholder="Brief summary, where you work, your vision, your timeline, etc."
+                    placeholder="Please include as many infos as possible, like where you work, your timeline, your vision, etc."
                     maxLength={2000}
                     className="max-h-80 min-h-40 resize-none rounded-lg border border-light  bg-dark p-2 text-light"
                     onClick={() =>

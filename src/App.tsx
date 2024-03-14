@@ -27,6 +27,7 @@ function App() {
             </Suspense>
 
             <main
+                className="cursor-none"
                 onMouseEnter={() => {
                     (mouseVariant == "hidden" || mouseVariant == "start") &&
                         dispatch(setCursorVariant("default"));

@@ -15,7 +15,7 @@ export default function Nav() {
     return (
         <nav
             ref={navRef}
-            className="fixed z-10 flex w-screen flex-row items-center justify-between overflow-hidden border-b border-light bg-dark p-2 text-light">
+            className="fixed z-10 flex w-screen cursor-auto flex-row items-center justify-between overflow-hidden border-b border-light bg-dark p-2 text-light">
             <a href="#intro" className="text-nowrap p-2 text-xs xsm:text-sm">
                 EMANUELE BROTTI, 2024 ©
             </a>
