@@ -18,7 +18,7 @@ export default function Reveal({
     //delay is optional
 
     const ref = useRef<HTMLDivElement>(null);
-    const inView = useInView(ref); //used to see if div is visible
+    const inView = useInView(ref, { once: true }); //used to see if div is visible
     const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
     ).matches; //to avoid motion sickness

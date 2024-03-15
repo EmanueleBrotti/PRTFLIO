@@ -67,7 +67,7 @@ export default function ContactForm() {
         const serviceID = process.env.SERVICE_ID as string;
         const templateID = process.env.TEMPLATE_ID as string;
         const userID = process.env.USER_ID as string;
-
+        captchaRef.current?.reset();
         await emailjs //sends the email using emailjs
             .send(serviceID, templateID, templateParams, userID)
             .then((response) => {
