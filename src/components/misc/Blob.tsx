@@ -14,6 +14,7 @@ export default function Blob(props: { upsideDown?: boolean }) {
     return (
         <div className={"-z-10 m-0 overflow-hidden border-0 bg-light p-0"}>
             <svg
+                className={`relative ${props.upsideDown ? "-bottom-2" : "-top-2"}`}
                 viewBox="74 144 50 7"
                 xmlns="http://www.w3.org/2000/svg"
                 transform={

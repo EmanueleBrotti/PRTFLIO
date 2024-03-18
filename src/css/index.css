@@ -34,6 +34,6 @@ body {
 }
 
 #root {
-    width: 100%;
+    width: 100svw;
     height: 100vh;
 }
