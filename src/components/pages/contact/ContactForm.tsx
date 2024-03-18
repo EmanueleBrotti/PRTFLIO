@@ -155,7 +155,7 @@ export default function ContactForm() {
                 <div className="flex h-max flex-row gap-4">
                     <input
                         type="submit"
-                        className="w-full rounded-sm border border-dark bg-light p-2 font-bold text-dark transition duration-300 hover:bg-green"
+                        className="w-full rounded-sm border border-dark bg-light p-2 font-bold text-dark transition-all duration-300 hover:rounded-xl hover:bg-green"
                     />
                     <Turnstile
                         siteKey={process.env.CAPTCHA_KEY as string}

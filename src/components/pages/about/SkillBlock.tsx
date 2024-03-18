@@ -53,7 +53,7 @@ export default function SkillBlock(props: {
                 initial="start"
                 animate={animation}
                 transition={{ duration: 0.6, delay: props.delay }}>
-                <div className=" flex items-center justify-center rounded-lg bg-dark p-3 text-5xl text-light transition  duration-300 group-hover:bottom-1 group-hover:bg-green group-hover:text-dark">
+                <div className=" flex items-center justify-center rounded-sm bg-dark p-3 text-5xl text-light transition-all  duration-300 group-hover:rounded-xl group-hover:bg-green group-hover:text-dark">
                     <i className={`devicon-${props.icon}`}></i>
                 </div>
             </motion.div>
