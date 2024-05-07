@@ -23,7 +23,7 @@ export default function Ema(props: JSX.IntrinsicElements["group"]) {
             dispose={null}
             scale={[0.38, 0.38, 0.38]}
             position={[0, -2.2, 0]}
-            rotation={[0, -Math.PI / 2 - 0.05, -0.03]}>
+            rotation={[0, -Math.PI / 2 - 0.1, -0.03]}>
             <mesh
                 geometry={nodes.mmGroup0.geometry}
                 material={

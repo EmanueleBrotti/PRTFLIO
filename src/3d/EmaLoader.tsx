@@ -43,7 +43,7 @@ function calculateAngle(
         y: mousePosition.y - center.y > 0 ? 1 : -1,
     };
 
-    return new THREE.Euler(offset.y * 0.1, offset.x * 0.08, 0);
+    return new THREE.Euler(offset.y * 0.1, offset.x * 0.06, 0);
 }
 
 export default function EmaLoader() {

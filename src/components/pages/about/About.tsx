@@ -26,12 +26,6 @@ const skills = [
         job: "DESIGNER",
     },
     {
-        name: "BOOTSTRAP",
-        icon: "bootstrap-plain",
-        link: "https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries",
-        job: "DESIGNER",
-    },
-    {
         name: "JAVASCRIPT",
         icon: "javascript-plain",
         link: "https://www.freecodecamp.org/certification/EmanueleBrotti/javascript-algorithms-and-data-structures-v8",
@@ -40,12 +34,6 @@ const skills = [
     {
         name: "TYPESCRIPT",
         icon: "typescript-plain",
-        link: "https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries",
-        job: "DEV",
-    },
-    {
-        name: "JQUERY",
-        icon: "jquery-plain",
         link: "https://www.freecodecamp.org/certification/EmanueleBrotti/front-end-development-libraries",
         job: "DEV",
     },
@@ -68,20 +56,7 @@ const skills = [
         link: "https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft",
         job: "DEV",
     },
-    {
-        name: "GITHUB",
-        icon: "github-original",
-        link: "https://github.com/EmanueleBrotti",
-        job: "USER",
-    },
-    {
-        name: "VSCODE",
-        icon: "vscode-plain",
-        link: "https://www.freecodecamp.org/certification/EmanueleBrotti/foundational-c-sharp-with-microsoft",
-        job: "USER",
-    },
     // {name: "python", link:""}, so usarlo ma non ho certificazione
-    //poi fai git php e rust
 ];
 
 export default function About() {
@@ -123,13 +98,12 @@ export default function About() {
                     onMouseLeave={() => dispatch(setCursorVariant("default"))}>
                     <Reveal delay={0.2}>
                         <p className="m-4 text-pretty p-4 text-lg transition-all duration-500 xsm:text-xl sm:text-2xl md:text-3xl lg:border-l">
-                            Continuously expanding my programming skills since I
-                            was a kid, I strive to maintain a flexible mindset
-                            in an ever-changing industry, to deliver
-                            cutting-edge solutions to my clients. <br />
-                            My goal is to provide an exceptional digital
-                            experience, ensuring a seamless journey from start
-                            to finish.
+                            I'm an Italian developer focusing on exceptional
+                            digital experiences, with a background in computer
+                            science and engineering. <br></br>
+                            My goal is to provide a seamless journey from start
+                            to finish, maintain a flexible mindset, and learn
+                            new skills along the way.
                         </p>
                     </Reveal>
 
